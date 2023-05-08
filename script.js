@@ -1,7 +1,7 @@
 // Get the HTML elements that we need
 const input = document.querySelector('input');
 const buttons = document.querySelectorAll('button');
-const clearButton = document.querySelector('#clear');
+
 
 // Add click event listeners to all the buttons
 buttons.forEach(button => {
@@ -23,6 +23,7 @@ buttons.forEach(button => {
     } else if (buttonText === '=') {
       // Calculate the result of the expression entered in the input
       input.value = eval(inputValue);
+      
     } else {
       // Append the clicked button's text to the input value
       input.value = inputValue + buttonText;
@@ -30,8 +31,4 @@ buttons.forEach(button => {
   });
 });
 
-// Add click event listener to the clear button
-clearButton.addEventListener('click', () => {
-  // Set the input value to '2'
-  input.value = '2';
-});
+

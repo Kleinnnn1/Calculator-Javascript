@@ -21,8 +21,15 @@ buttons.forEach(button => {
       // Calculate the percentage of the input value
       input.value = inputValue / 100;
     } else if (buttonText === '=') {
+      try {
+        input.value = eval(inputValue);
+      } catch (error) {
+        // Display an error message if the input value is invalid
+        input.value = 'Error';
+      }
       // Calculate the result of the expression entered in the input
       input.value = eval(inputValue);
+      
       
     } else {
       // Append the clicked button's text to the input value
